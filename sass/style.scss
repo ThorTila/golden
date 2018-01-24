@@ -1,4 +1,5 @@
 $lightText: #fff;
+$yellow: #fed136;
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @font-face {
     font-family: 'Wisdom';
@@ -16,7 +17,7 @@ $lightText: #fff;
     box-sizing: border-box;
 }
 body {
-    background-color: #fff;
+    background-color: $lightText;
     margin: 0;
 }
 header {
@@ -42,7 +43,7 @@ header {
         padding-top: 48px;
         h1 {
            font-family: Wisdom;
-            color: #fed136;
+            color: $yellow;
             font-weight: 100;
             font-size: 26px;
             letter-spacing: 0.05em;
@@ -94,12 +95,48 @@ header {
             width: 17%;
             height: 65px;
             color: $lightText;
-            background-color: #fed136;
+            background-color: $yellow;
             border: none;
             border-radius: 5px;
             font-family: Montserrat;
             font-weight: bold;
             font-size: 18px;
+            text-transform: uppercase;
+        }
+    }
+}
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 120px 0;
+    .flex-row {
+        max-width: 1200px;
+        display: flex;
+        text-align: center;
+        .header {
+            padding-bottom: 80px;
+            h2 {
+                
+            }
+            h3 {
+                
+            }
+        }
+        .box {
+            i {
+                color: $yellow;
+                &:last-child {
+                    -webkit-text-stroke: 4px #fff;
+                }
+            }
+            h3 {
+                
+            }
+            P {
+                
+            }
         }
     }
 }
