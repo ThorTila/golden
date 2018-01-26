@@ -177,20 +177,44 @@ header {
     flex-direction: column;
     align-items: center;
     background-color: #f7f7f7;
+    text-align: center;
+    padding: 100px 0;
     .header {
         max-width: $maxWidth;
         h2 {
-                
+            font-family: Montserrat;
+            font-size: 40px;
+            line-height: 75px;
+            letter-spacing: -0,025em;
+            color: $blackText;
         }
         h3 {
-                
+            font-family: 'Droid Serif';
+            font-style: italic;
+            font-size: 16px;
+            color: $lightText;
         }
     }
     .gallery {
         max-width: $maxWidth;
         display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 35px;
+        grid-row-gap: 50px;
         .gallery-item {
-            
+            background-color: $white;
+            h3 {
+                font-family: Montserrat;
+                font-size: 18px;
+                letter-spacing: -0.025em;
+                color: #333;
+            }
+            p {
+                font-family: 'Droid Serif';
+                font-style: italic;
+                font-size: 14px;
+                color: #737373;
+            }
         }
     }
 }
