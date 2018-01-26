@@ -1,6 +1,10 @@
-$lightText: #fff;
+$white: #fff;
+$lightText: #777;
+$blackText: #222;
 $yellow: #fed136;
+$maxWidth: 960px;
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 @font-face {
     font-family: 'Wisdom';
     src: url(../vendor/Wisdom.otf);
@@ -11,13 +15,27 @@ $yellow: #fed136;
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Droid Serif';
+    src: url('DroidSerif-Italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+@mixin text-stroke($width, $color) {
+    text-stroke: $width $color;
+    -webkit-text-stroke: $width $color;
+}
+@mixin margin-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    background-color: $lightText;
+    background-color: $white;
     margin: 0;
 }
 header {
@@ -38,9 +56,9 @@ header {
     background-size: cover;
     nav {
         width: 100%;
-        max-width: 1200px;
+        max-width: $maxWidth;
         margin: 0 auto;
-        padding-top: 48px;
+        padding: 48px 10px 0 10px;
         h1 {
            font-family: Wisdom;
             color: $yellow;
@@ -51,8 +69,7 @@ header {
         }
         ul {
             float: right;
-            list-style-type: none;  
-            padding-right: 10%;
+            list-style-type: none;
             li {
                 display: inline-block;
                 padding: 0 17px;
@@ -61,7 +78,7 @@ header {
                 }
                 a {
                     text-decoration: none;
-                    color: $lightText;
+                    color: $white;
                     font-family: Montserrat;
                     font-size: 14px;
                     text-transform: uppercase;
@@ -72,29 +89,29 @@ header {
     }
     .slogan {
         width: 100%;
-        max-width: 1200px;
+        max-width: $maxWidth;
         margin: 0 auto;
-        color: $lightText;
+        color: $white;
         text-align: center;
         h2 {
             text-transform: uppercase;
             font-size: 75px;
-            letter-spacing: 0.025em;
+            letter-spacing: -0.025em;
             font-family: Montserrat;
-            font-weight: bold;
             padding-bottom: 50px;
         }
         h3 {
             text-transform: capitalize;
             font-size: 40px;
-            letter-spacing: 0.025em;
+            letter-spacing: -0.025em;
             font-family: 'Droid Serif';
+            font-style: italic;
             padding-bottom: 60px;
         }
         button {
-            width: 17%;
+            width: 25%;
             height: 65px;
-            color: $lightText;
+            color: $white;
             background-color: $yellow;
             border: none;
             border-radius: 5px;
@@ -110,33 +127,70 @@ header {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 120px 0;
+    padding: 95px 0;
     .flex-row {
-        max-width: 1200px;
+        max-width: $maxWidth;
         display: flex;
         text-align: center;
+        padding: 0 10px;
         .header {
-            padding-bottom: 80px;
+            padding-bottom: 60px;
             h2 {
-                
+                font-family: Montserrat;
+                font-weight: bold;
+                font-size: 40px;
+                line-height: 75px;
+                letter-spacing: -0.025em;
             }
             h3 {
-                
+                font-family: 'Droid Serif';
+                font-style: italic;
+                font-size: 16px;
+                color: $lightText;
             }
         }
         .box {
             i {
                 color: $yellow;
                 &:last-child {
-                    -webkit-text-stroke: 4px #fff;
+                    @include text-stroke(4px, #fff);
                 }
             }
             h3 {
-                
+                font-family: Montserrat;
+                font-size: 18px;
+                line-height: 75px;
+                letter-spacing: -0.025em;
+                color: $blackText;
             }
             P {
-                
+                font-family: 'Roboto Slab';
+                font-size: 14px;
+                letter-spacing: -0.025em;
+                color: $lightText;
             }
+        }
+    }
+}
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f7f7;
+    .header {
+        max-width: $maxWidth;
+        h2 {
+                
+        }
+        h3 {
+                
+        }
+    }
+    .gallery {
+        max-width: $maxWidth;
+        display: grid;
+        .gallery-item {
+            
         }
     }
 }
