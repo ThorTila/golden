@@ -32,9 +32,9 @@ header .slogan h3 { text-transform: capitalize; font-size: 40px; letter-spacing:
 
 header .slogan button { width: 25%; height: 65px; color: #fff; background-color: #fed136; border: none; border-radius: 5px; font-family: Montserrat; font-weight: bold; font-size: 18px; text-transform: uppercase; }
 
-.services { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 95px 0; }
+.services { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 95px 0 120px 0; }
 
-.services .flex-row { max-width: 960px; display: -webkit-box; display: -ms-flexbox; display: flex; text-align: center; padding: 0 10px; }
+.services .flex-row { max-width: 960px; display: -webkit-box; display: -ms-flexbox; display: flex; text-align: center; }
 
 .services .flex-row .header { padding-bottom: 60px; }
 
@@ -46,13 +46,13 @@ header .slogan button { width: 25%; height: 65px; color: #fff; background-color:
 
 .services .flex-row .box i:last-child { text-stroke: 4px #fff; -webkit-text-stroke: 4px #fff; }
 
-.services .flex-row .box h3 { font-family: Montserrat; font-size: 18px; line-height: 75px; letter-spacing: -0.025em; color: #222; }
+.services .flex-row .box h3 { font-family: Montserrat; font-size: 18px; line-height: 45px; letter-spacing: -0.025em; color: #222; }
 
 .services .flex-row .box P { font-family: 'Roboto Slab'; font-size: 14px; letter-spacing: -0.025em; color: #777; }
 
-.portfolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #f7f7f7; text-align: center; padding: 90px 0 120px 0; }
+.portfolio { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #f7f7f7; text-align: center; padding: 90px 0 125px 0; }
 
-.portfolio .header { max-width: 960px; padding-bottom: 70px; }
+.portfolio .header { max-width: 960px; padding-bottom: 77px; }
 
 .portfolio .header h2 { font-family: Montserrat; font-size: 40px; line-height: 75px; letter-spacing: -0,025em; color: #222; }
 
@@ -68,14 +68,42 @@ header .slogan button { width: 25%; height: 65px; color: #fff; background-color:
 
 .portfolio .gallery .gallery-item .caption p { font-family: 'Droid Serif'; font-style: italic; font-size: 14px; color: #737373; }
 
-.about { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; }
+.about { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; padding: 95px 0 120px 0; }
 
-.about .header { max-width: 960px; }
+.about .header { max-width: 960px; padding-bottom: 75px; }
 
-.about .timeline { width: 100%; max-width: 960px; display: -ms-grid; display: grid; -ms-grid-columns: [left] 3fr [middle] 2fr [right] 3fr; grid-template-columns: [left] 3fr [middle] 2fr [right] 3fr; }
+.about .header h2 { font-family: Montserrat; font-size: 40px; line-height: 75px; letter-spacing: -0,025em; color: #222; text-transform: uppercase; }
 
-.about .timeline .caption:nth-child(odd) { -ms-grid-column: left; grid-column: left; text-align: right; }
+.about .header h3 { font-family: 'Droid Serif'; font-style: italic; font-size: 16px; color: #777; }
 
-.about .timeline .caption:nth-child(even) { -ms-grid-column: right; grid-column: right; text-align: left; }
+.about .timeline { width: 100%; max-width: 960px; display: -ms-grid; display: grid; -ms-grid-columns: [left] 3fr [middle] 2fr [right] 3fr; grid-template-columns: [left] 3fr [middle] 2fr [right] 3fr; grid-row-gap: 90px; grid-column-gap: 20px; position: relative; }
+
+.about .timeline .caption:nth-child(even) { -ms-grid-column: left; grid-column: left; text-align: right; }
+
+.about .timeline .caption:nth-child(odd) { -ms-grid-column: right; grid-column: right; text-align: left; }
+
+.about .timeline .caption h3 { font-family: Montserrat; font-size: 18px; letter-spacing: -0.025em; color: #222; }
+
+.about .timeline .caption h3:first-child { text-transform: uppercase; }
+
+.about .timeline .caption h3:nth-child(2) { text-transform: capitalize; padding-bottom: 15px; }
+
+.about .timeline .caption p { font-family: 'Roboto Slab'; font-size: 14px; letter-spacing: -0.025em; color: #777; }
 
 .about .timeline img { -ms-grid-column: middle; grid-column: middle; justify-self: center; }
+
+.about .timeline span { width: 0; height: 100%; position: absolute; right: 50%; border-right: 2px solid #f1f1f1; -ms-grid-column: 2; grid-column-start: 2; grid-column-end: 3; -ms-grid-row: 1; grid-row-start: 1; grid-row-end: 8; z-index: -1; }
+
+.team { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 95px 0 120px 0; background-color: #f9f9f9; }
+
+.team .header { max-width: 960px; text-align: center; }
+
+.team .people { display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; max-width: 960px; text-align: center; }
+
+.team .people .employee { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; width: 33%; }
+
+.team .people .employee .photo { background-color: black; border: 7px solid white; border-radius: 50%; }
+
+.team .people .employee .photo:before { content: ""; padding-top: 100%; display: inline-block; }
+
+.team .bottom-text { max-width: 960px; text-align: center; }
