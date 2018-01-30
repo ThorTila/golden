@@ -439,5 +439,18 @@ header {
     }
 }
 footer {
-    
+    padding: 15px 0;
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: $maxWidth;
+        margin: 0 auto;
+        p {
+            display: flex;
+            align-items: center;
+        }
+        .social-media {
+            justify-self: center;
+        }
+    }
 }

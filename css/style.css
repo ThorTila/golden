@@ -141,3 +141,11 @@ header .slogan button { width: 25%; height: 65px; color: #fff; background-color:
 .contact form .fieldset textarea { grid-area: 1 / 2 / 4 / 2; }
 
 .contact form button { background-color: #fed136; color: #fff; height: 65px; width: 25%; border: none; border-radius: 5px; font-family: Montserrat; font-weight: bold; font-size: 18px; text-transform: uppercase; }
+
+footer { padding: 15px 0; }
+
+footer .container { display: -ms-grid; display: grid; -ms-grid-columns: 1fr 1fr 1fr; grid-template-columns: 1fr 1fr 1fr; max-width: 960px; margin: 0 auto; }
+
+footer .container p { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+footer .container .social-media { justify-self: center; }
