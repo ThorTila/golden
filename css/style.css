@@ -117,3 +117,27 @@ header .slogan button { width: 25%; height: 65px; color: #fff; background-color:
 .team .people .employee .social-media { padding: 10px 0; }
 
 .team .bottom-text { max-width: 960px; text-align: center; padding: 40px 160px 0 160px; }
+
+.logos { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; padding: 70px 0; }
+
+.contact { background-color: #222; background-image: url(../images/mapImage.png); background-repeat: no-repeat; background-position: right; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; padding: 100px 0 115px 0; text-align: center; }
+
+.contact form { max-width: 960px; width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.contact form .header h2 { font-family: Montserrat; font-size: 40px; letter-spacing: -0.025em; color: #fff; text-transform: uppercase; padding-bottom: 5px; }
+
+.contact form .header h3 { font-family: 'Droid Serif'; font-style: italic; font-size: 16px; color: #777; }
+
+.contact form .fieldset { display: -ms-grid; display: grid; -ms-grid-columns: 1fr 1fr; grid-template-columns: 1fr 1fr; -ms-grid-rows: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; grid-column-gap: 30px; grid-row-gap: 30px; width: 100%; border: none; margin: 80px 0 30px 0; padding: 0 10px; }
+
+.contact form .fieldset input { height: 50px; }
+
+.contact form .fieldset input:first-child { grid-row: 1 / 2; }
+
+.contact form .fieldset input:nth-child(2) { grid-row: 2 / 3; }
+
+.contact form .fieldset input:last-child { grid-row: 3 / 4; }
+
+.contact form .fieldset textarea { grid-area: 1 / 2 / 4 / 2; }
+
+.contact form button { background-color: #fed136; color: #fff; height: 65px; width: 25%; border: none; border-radius: 5px; font-family: Montserrat; font-weight: bold; font-size: 18px; text-transform: uppercase; }

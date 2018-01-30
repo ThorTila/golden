@@ -352,7 +352,7 @@ header {
                 }
             }
             .social-media {
-                padding: 10px 0;
+                padding: 10px 0; //dodać hover
             }
         }
     }
@@ -361,4 +361,83 @@ header {
         text-align: center;
         padding: 40px 160px 0 160px;
     }
+}
+.logos {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0;
+}
+.contact {
+    background-color: $blackText;
+    background-image:url(../images/mapImage.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    display: flex;
+    justify-content: center;
+    padding: 100px 0 115px 0;
+    text-align: center;
+    form {
+        max-width: $maxWidth;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .header {
+            h2 {
+                font-family: Montserrat;
+                font-size: 40px;
+                letter-spacing: -0.025em;
+                color: $white;
+                text-transform: uppercase;
+                padding-bottom: 5px;
+            }
+            h3 {
+                font-family: 'Droid Serif';
+                font-style: italic;
+                font-size: 16px;
+                color: $lightText;
+            }
+        }
+        .fieldset {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-column-gap: 30px;
+            grid-row-gap: 30px;
+            width: 100%;
+            border: none;
+            margin: 80px 0 30px 0;
+            padding: 0 10px;
+            input {
+                height: 50px;
+                &:first-child {
+                    grid-row: 1 / 2;
+                }
+                &:nth-child(2) {
+                    grid-row: 2 / 3;
+                }
+                &:last-child {
+                    grid-row: 3 / 4;
+                }
+            }
+            textarea {
+                grid-area: 1 / 2 / 4 / 2;
+            }
+        }
+        button {
+            background-color: $yellow;
+            color: $white;
+            height: 65px;
+            width: 25%;
+            border: none;
+            border-radius: 5px;
+            font-family: Montserrat;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+    }
+}
+footer {
+    
 }
