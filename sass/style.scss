@@ -226,7 +226,7 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 95px 0 120px 0;
+    padding: 95px 0 126px 0;
     .header {
         max-width: $maxWidth;
         padding-bottom: 75px;
@@ -304,16 +304,24 @@ header {
      display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 95px 0 120px 0;
+    padding: 105px 0 120px 0;
     background-color: #f9f9f9;
     .header {
         max-width: $maxWidth;
         text-align: center;
         h2 {
-            
+           font-family: Montserrat;
+            font-size: 40px;
+            letter-spacing: -0.05em;
+            color: $blackText;
+            text-transform: uppercase;
         }
         h3 {
-            
+            font-family: 'Droid Serif';
+            font-style: italic;
+            font-size: 16px;
+            color: $lightText;
+            padding-top: 15px;
         }
     }
     .people {
@@ -321,10 +329,18 @@ header {
         width: 100%;
         max-width: $maxWidth;
         text-align: center;
+        padding: 0 80px;
         .employee {
             display: flex;
             flex-direction: column;
             width: 33%;
+            margin: 75px 20px 0 20px;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
             .photo {
                 background-color: black;
                 border: 7px solid white;
@@ -335,10 +351,14 @@ header {
                     display: inline-block;
                 }
             }
+            .social-media {
+                padding: 10px 0;
+            }
         }
     }
     .bottom-text {
         max-width: $maxWidth;
         text-align: center;
+        padding: 40px 160px 0 160px;
     }
 }

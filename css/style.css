@@ -68,7 +68,7 @@ header .slogan button { width: 25%; height: 65px; color: #fff; background-color:
 
 .portfolio .gallery .gallery-item .caption p { font-family: 'Droid Serif'; font-style: italic; font-size: 14px; color: #737373; }
 
-.about { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; padding: 95px 0 120px 0; }
+.about { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; padding: 95px 0 126px 0; }
 
 .about .header { max-width: 960px; padding-bottom: 75px; }
 
@@ -94,16 +94,26 @@ header .slogan button { width: 25%; height: 65px; color: #fff; background-color:
 
 .about .timeline span { width: 0; height: 100%; position: absolute; right: 50%; border-right: 2px solid #f1f1f1; -ms-grid-column: 2; grid-column-start: 2; grid-column-end: 3; -ms-grid-row: 1; grid-row-start: 1; grid-row-end: 8; z-index: -1; }
 
-.team { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 95px 0 120px 0; background-color: #f9f9f9; }
+.team { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 105px 0 120px 0; background-color: #f9f9f9; }
 
 .team .header { max-width: 960px; text-align: center; }
 
-.team .people { display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; max-width: 960px; text-align: center; }
+.team .header h2 { font-family: Montserrat; font-size: 40px; letter-spacing: -0.05em; color: #222; text-transform: uppercase; }
 
-.team .people .employee { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; width: 33%; }
+.team .header h3 { font-family: 'Droid Serif'; font-style: italic; font-size: 16px; color: #777; padding-top: 15px; }
+
+.team .people { display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; max-width: 960px; text-align: center; padding: 0 80px; }
+
+.team .people .employee { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; width: 33%; margin: 75px 20px 0 20px; }
+
+.team .people .employee:first-child { margin-left: 0; }
+
+.team .people .employee:last-child { margin-right: 0; }
 
 .team .people .employee .photo { background-color: black; border: 7px solid white; border-radius: 50%; }
 
 .team .people .employee .photo:before { content: ""; padding-top: 100%; display: inline-block; }
 
-.team .bottom-text { max-width: 960px; text-align: center; }
+.team .people .employee .social-media { padding: 10px 0; }
+
+.team .bottom-text { max-width: 960px; text-align: center; padding: 40px 160px 0 160px; }
