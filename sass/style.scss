@@ -29,10 +29,21 @@ $maxWidth: 960px;
     margin-right: auto;
     margin-left: auto;
 }
+%placeholder::placeholder {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -0.025em;
+    color: #bbb;
+    text-transform: uppercase;
+    line-height: 44px;
+}
 * {
+    box-sizing: border-box;
+}
+p, h1, h2, h3, h4, h5, h6, ul, li, a {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 body {
     background-color: $white;
@@ -334,7 +345,7 @@ header {
             display: flex;
             flex-direction: column;
             width: 33%;
-            margin: 75px 20px 0 20px;
+            margin: 75px 30px 0 20px;
             &:first-child {
                 margin-left: 0;
             }
@@ -351,6 +362,21 @@ header {
                     display: inline-block;
                 }
             }
+            .caption {
+                h3 {
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    line-height: 50px;
+                    letter-spacing: -0.025em;
+                    color: $blackText;
+                }
+                p {
+                    font-family: 'Roboto Slab';
+                    font-size: 14px;
+                    letter-spacing: -0.025em;
+                    color: $lightText;
+                }
+            }
             .social-media {
                 padding: 10px 0; //dodać hover
             }
@@ -360,12 +386,18 @@ header {
         max-width: $maxWidth;
         text-align: center;
         padding: 40px 160px 0 160px;
+        p {
+            font-family: 'Roboto Slab';
+            font-size: 16px;
+            letter-spacing: -0.025em;
+            color: $lightText;
+        }
     }
 }
 .logos {
     display: flex;
     justify-content: center;
-    padding: 70px 0;
+    padding: 50px 0 65px 0;
 }
 .contact {
     background-color: $blackText;
@@ -410,6 +442,7 @@ header {
             padding: 0 10px;
             input {
                 height: 50px;
+                padding-left: 20px;
                 &:first-child {
                     grid-row: 1 / 2;
                 }
@@ -419,9 +452,12 @@ header {
                 &:last-child {
                     grid-row: 3 / 4;
                 }
+                @extend %placeholder;
             }
             textarea {
                 grid-area: 1 / 2 / 4 / 2;
+                padding-left: 20px;
+                @extend %placeholder;
             }
         }
         button {
@@ -448,6 +484,11 @@ footer {
         p {
             display: flex;
             align-items: center;
+            font-family: Montserrat;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: -0.025em;
+            color: #555;
         }
         .social-media {
             justify-self: center;

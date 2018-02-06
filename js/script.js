@@ -51,7 +51,7 @@ function roundDown(number) {
   }
 }
 function smoothScroll(offset, duration) {
-    //For normal browsers
+    //For older browsers and IE
   if (('scroll-behavior' in document.body.style) === false || (CSS.supports('scroll-behavior', 'smooth')) === false) {
 	 var i = 0;
     var increments = roundDown(offset / (duration / 10));
@@ -68,7 +68,7 @@ function smoothScroll(offset, duration) {
       }
     }
   }
-    //For older browsers and IE
+    //For normal browsers
   else {
     document.getElementsByTagName('html')[0].style['scroll-behavior'] = "smooth";
     window.scrollBy(0,offset);
