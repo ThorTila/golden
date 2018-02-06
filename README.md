@@ -3,3 +3,5 @@
 Project for Kodilla Web developer course
 
 Coded in HTML, CSS and JavaScript.
+
+[Live preview](https://thortila.github.io/golden/)
