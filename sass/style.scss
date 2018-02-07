@@ -1,54 +1,7 @@
-$white: #fff;
-$lightText: #777;
-$blackText: #222;
-$yellow: #fed136;
-$maxWidth: 960px;
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
-@font-face {
-    font-family: 'Wisdom';
-    src: url(../vendor/Wisdom.otf);
-}
-@font-face {
-    font-family: 'Droid Serif';
-    src: url('../vendor/DroidSerif-Regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Droid Serif';
-    src: url('DroidSerif-Italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-}
-@mixin text-stroke($width, $color) {
-    text-stroke: $width $color;
-    -webkit-text-stroke: $width $color;
-}
-@mixin margin-auto {
-    margin-right: auto;
-    margin-left: auto;
-}
-%placeholder::placeholder {
-    font-family: Montserrat;
-    font-weight: bold;
-    font-size: 14px;
-    letter-spacing: -0.025em;
-    color: #bbb;
-    text-transform: uppercase;
-    line-height: 44px;
-}
-* {
-    box-sizing: border-box;
-}
-p, h1, h2, h3, h4, h5, h6, ul, li, a {
-    margin: 0;
-    padding: 0;
-}
-body {
-    background-color: $white;
-    margin: 0;
-}
+@import 'variables';
+@import 'fonts';
+@import 'mixins';
+@import 'global';
 header {
     width: 100%;
     height: 100vh;
@@ -102,34 +55,18 @@ header {
         width: 100%;
         max-width: $maxWidth;
         margin: 0 auto;
-        color: $white;
         text-align: center;
         h2 {
-            text-transform: uppercase;
             font-size: 75px;
-            letter-spacing: -0.025em;
-            font-family: Montserrat;
             padding-bottom: 50px;
+            color: $white;
         }
         h3 {
             text-transform: capitalize;
             font-size: 40px;
             letter-spacing: -0.025em;
-            font-family: 'Droid Serif';
-            font-style: italic;
             padding-bottom: 60px;
-        }
-        button {
-            width: 25%;
-            height: 65px;
             color: $white;
-            background-color: $yellow;
-            border: none;
-            border-radius: 5px;
-            font-family: Montserrat;
-            font-weight: bold;
-            font-size: 18px;
-            text-transform: uppercase;
         }
     }
 }
@@ -145,19 +82,6 @@ header {
         text-align: center;
         .header {
             padding-bottom: 60px;
-            h2 {
-                font-family: Montserrat;
-                font-weight: bold;
-                font-size: 40px;
-                line-height: 75px;
-                letter-spacing: -0.025em;
-            }
-            h3 {
-                font-family: 'Droid Serif';
-                font-style: italic;
-                font-size: 16px;
-                color: $lightText;
-            }
         }
         .box {
             i {
@@ -166,7 +90,7 @@ header {
                     @include text-stroke(4px, #fff);
                 }
             }
-            h3 {
+            h4 {
                 font-family: Montserrat;
                 font-size: 18px;
                 line-height: 45px;
@@ -192,19 +116,6 @@ header {
     .header {
         max-width: $maxWidth;
         padding-bottom: 77px;
-        h2 {
-            font-family: Montserrat;
-            font-size: 40px;
-            line-height: 75px;
-            letter-spacing: -0,025em;
-            color: $blackText;
-        }
-        h3 {
-            font-family: 'Droid Serif';
-            font-style: italic;
-            font-size: 16px;
-            color: $lightText;
-        }
     }
     .gallery {
         max-width: $maxWidth;
@@ -216,7 +127,7 @@ header {
             background-color: $white;
             .caption {
                 padding: 20px 0;
-                h3 {
+                h4 {
                     font-family: Montserrat;
                     font-size: 18px;
                     letter-spacing: -0.025em;
@@ -241,20 +152,6 @@ header {
     .header {
         max-width: $maxWidth;
         padding-bottom: 75px;
-        h2 {
-           font-family: Montserrat;
-            font-size: 40px;
-            line-height: 75px;
-            letter-spacing: -0,025em;
-            color: $blackText;
-            text-transform: uppercase;
-        }
-        h3 {
-            font-family: 'Droid Serif';
-            font-style: italic;
-            font-size: 16px;
-            color: $lightText;
-        }
     }
     .timeline {
         width: 100%;
@@ -273,7 +170,7 @@ header {
                 grid-column: right;
                 text-align: left;
             }
-            h3 {
+            h4 {
                 font-family: Montserrat;
                 font-size: 18px;
                 letter-spacing: -0.025em;
@@ -321,17 +218,9 @@ header {
         max-width: $maxWidth;
         text-align: center;
         h2 {
-           font-family: Montserrat;
-            font-size: 40px;
-            letter-spacing: -0.05em;
-            color: $blackText;
-            text-transform: uppercase;
+            line-height: normal;
         }
         h3 {
-            font-family: 'Droid Serif';
-            font-style: italic;
-            font-size: 16px;
-            color: $lightText;
             padding-top: 15px;
         }
     }
@@ -363,7 +252,7 @@ header {
                 }
             }
             .caption {
-                h3 {
+                h4 {
                     font-family: Montserrat;
                     font-size: 16px;
                     line-height: 50px;
@@ -416,18 +305,9 @@ header {
         align-items: center;
         .header {
             h2 {
-                font-family: Montserrat;
-                font-size: 40px;
-                letter-spacing: -0.025em;
                 color: $white;
-                text-transform: uppercase;
+                line-height: normal;
                 padding-bottom: 5px;
-            }
-            h3 {
-                font-family: 'Droid Serif';
-                font-style: italic;
-                font-size: 16px;
-                color: $lightText;
             }
         }
         .fieldset {
@@ -440,9 +320,18 @@ header {
             border: none;
             margin: 80px 0 30px 0;
             padding: 0 10px;
+            label {
+                display: none;
+            }
             input {
                 height: 50px;
                 padding-left: 20px;
+                font-family: Montserrat;
+                font-weight: bold;
+                font-size: 14px;
+                letter-spacing: -0.025em;
+                color: $blackText;
+                line-height: 44px;
                 &:first-child {
                     grid-row: 1 / 2;
                 }
@@ -456,21 +345,14 @@ header {
             }
             textarea {
                 grid-area: 1 / 2 / 4 / 2;
-                padding-left: 20px;
+                padding: 20px;
+                font-family: Montserrat;
+                font-weight: regular;
+                font-size: 14px;
+                letter-spacing: -0.025em;
+                color: $blackText;
                 @extend %placeholder;
             }
-        }
-        button {
-            background-color: $yellow;
-            color: $white;
-            height: 65px;
-            width: 25%;
-            border: none;
-            border-radius: 5px;
-            font-family: Montserrat;
-            font-weight: bold;
-            font-size: 18px;
-            text-transform: uppercase;
         }
     }
 }

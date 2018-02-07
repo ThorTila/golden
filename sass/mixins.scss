@@ -1,0 +1,16 @@
+@mixin text-stroke($width, $color) {
+    text-stroke: $width $color;
+    -webkit-text-stroke: $width $color;
+}
+@mixin margin-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+%placeholder::placeholder {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -0.025em;
+    color: #bbb;
+    text-transform: uppercase;
+}

@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: $white;
+    margin: 0;
+}
+p, h1, h2, h3, h4, h5, h6, ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font-family: Montserrat;
+    font-size: 40px;
+    line-height: 75px;
+    letter-spacing: -0.025em;
+    color: $blackText;
+    text-transform: uppercase;
+}
+h3 {
+    font-family: 'Droid Serif';
+    font-style: italic;
+    font-size: 16px;
+    color: $lightText; 
+}
+button {
+    width: 25%;
+    height: 65px;
+    color: $white;
+    background-color: $yellow;
+    border: none;
+    border-radius: 5px;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
