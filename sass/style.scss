@@ -6,25 +6,19 @@ header {
     width: 100%;
     height: 100vh;
     max-height: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex($direction: column, $justify: space-between);
     line-height: 41px;
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)
-        ),
-        url(../images/header@1x.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)),
+        url(../images/header@1x.png) center/cover no-repeat;
     nav {
         width: 100%;
         max-width: $maxWidth;
-        margin: 0 auto;
+        @include margin-auto;
         padding: 48px 10px 0 10px;
         h1 {
-           font-family: Wisdom;
+            font-family: Wisdom;
             color: $yellow;
             font-weight: 100;
             font-size: 26px;
@@ -54,7 +48,7 @@ header {
     .slogan {
         width: 100%;
         max-width: $maxWidth;
-        margin: 0 auto;
+        @include margin-auto;
         text-align: center;
         h2 {
             font-size: 75px;
@@ -71,15 +65,9 @@ header {
     }
 }
 .services {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 95px 0 120px 0;
     .flex-row {
         max-width: $maxWidth;
         display: flex;
-        text-align: center;
         .header {
             padding-bottom: 60px;
         }
@@ -91,52 +79,30 @@ header {
                 }
             }
             h4 {
-                font-family: Montserrat;
-                font-size: 18px;
                 line-height: 45px;
-                letter-spacing: -0.025em;
-                color: $blackText;
-            }
-            P {
-                font-family: 'Roboto Slab';
-                font-size: 14px;
-                letter-spacing: -0.025em;
-                color: $lightText;
             }
         }
     }
 }
 .portfolio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #f7f7f7;
-    text-align: center;
-    padding: 90px 0 125px 0;
     .header {
         max-width: $maxWidth;
         padding-bottom: 77px;
     }
     .gallery {
         max-width: $maxWidth;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: 35px;
-        grid-row-gap: 60px;
+        @include grid($column: '1fr 1fr 1fr', $rowGap: 60px, $columnGap: 35px);
         .gallery-item {
             background-color: $white;
             .caption {
                 padding: 20px 0;
                 h4 {
-                    font-family: Montserrat;
-                    font-size: 18px;
-                    letter-spacing: -0.025em;
                     color: #333;
                 }
                 p {
-                    font-family: 'Droid Serif';
+                    letter-spacing: normal;
                     font-style: italic;
-                    font-size: 14px;
                     color: #737373;
                 }
             }
@@ -144,11 +110,6 @@ header {
     }
 }
 .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 95px 0 126px 0;
     .header {
         max-width: $maxWidth;
         padding-bottom: 75px;
@@ -156,10 +117,7 @@ header {
     .timeline {
         width: 100%;
         max-width: $maxWidth;
-        display: grid;
-        grid-template-columns: [left] 3fr [middle] 2fr [right] 3fr;
-        grid-row-gap: 90px;
-        grid-column-gap: 20px;
+        @include grid($column: '[left] 3fr [middle] 2fr [right] 3fr', $rowGap: 90px, $columnGap: 20px);
         position: relative;
         .caption {
             &:nth-child(even) {
@@ -171,10 +129,6 @@ header {
                 text-align: left;
             }
             h4 {
-                font-family: Montserrat;
-                font-size: 18px;
-                letter-spacing: -0.025em;
-                color: $blackText;
                 &:first-child {
                     text-transform: uppercase;
                 }
@@ -182,12 +136,6 @@ header {
                     text-transform:capitalize;
                     padding-bottom: 15px;
                 }
-            }
-            p {
-                font-family: 'Roboto Slab';
-                font-size: 14px;
-                letter-spacing: -0.025em;
-                color: $lightText;
             }
         }
         img {
@@ -200,23 +148,16 @@ header {
             position: absolute;
             right: 50%;
             border-right: 2px solid #f1f1f1;
-            grid-column-start: 2;
-            grid-column-end: 3;
-            grid-row-start: 1;
-            grid-row-end: 8;
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 6;
             z-index: -1;
         }
     }
 }
 .team {
-     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 105px 0 120px 0;
     background-color: #f9f9f9;
     .header {
         max-width: $maxWidth;
-        text-align: center;
         h2 {
             line-height: normal;
         }
@@ -228,11 +169,9 @@ header {
         display: flex;
         width: 100%;
         max-width: $maxWidth;
-        text-align: center;
         padding: 0 80px;
         .employee {
-            display: flex;
-            flex-direction: column;
+            @include flex($direction: column);
             width: 33%;
             margin: 75px 30px 0 20px;
             &:first-child {
@@ -253,17 +192,8 @@ header {
             }
             .caption {
                 h4 {
-                    font-family: Montserrat;
                     font-size: 16px;
                     line-height: 50px;
-                    letter-spacing: -0.025em;
-                    color: $blackText;
-                }
-                p {
-                    font-family: 'Roboto Slab';
-                    font-size: 14px;
-                    letter-spacing: -0.025em;
-                    color: $lightText;
                 }
             }
             .social-media {
@@ -273,36 +203,23 @@ header {
     }
     .bottom-text {
         max-width: $maxWidth;
-        text-align: center;
         padding: 40px 160px 0 160px;
         p {
-            font-family: 'Roboto Slab';
             font-size: 16px;
-            letter-spacing: -0.025em;
-            color: $lightText;
         }
     }
 }
 .logos {
-    display: flex;
-    justify-content: center;
+    @include flex($justify: center);
     padding: 50px 0 65px 0;
 }
 .contact {
-    background-color: $blackText;
-    background-image:url(../images/mapImage.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    display: flex;
-    justify-content: center;
-    padding: 100px 0 115px 0;
-    text-align: center;
+    @include flex($justify: center);
+    background: url(../images/mapImage.png) right no-repeat $blackText;
     form {
         max-width: $maxWidth;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex($direction: column, $align: center);
         .header {
             h2 {
                 color: $white;
@@ -311,35 +228,28 @@ header {
             }
         }
         .fieldset {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            grid-column-gap: 30px;
-            grid-row-gap: 30px;
+            @include grid($row: 1fr 1fr 1fr, $column: 1fr 1fr, $rowGap: 30px, $columnGap: 30px);
             width: 100%;
             border: none;
             margin: 80px 0 30px 0;
             padding: 0 10px;
             label {
-                display: none;
+                display: none; //fallback for browsers without css support
             }
             input {
                 height: 50px;
                 padding-left: 20px;
-                font-family: Montserrat;
-                font-weight: bold;
+                @extend h4;
                 font-size: 14px;
-                letter-spacing: -0.025em;
-                color: $blackText;
                 line-height: 44px;
                 &:first-child {
-                    grid-row: 1 / 2;
+                    grid-row: 1 / span 1;
                 }
                 &:nth-child(2) {
-                    grid-row: 2 / 3;
+                    grid-row: 2 / span 1;
                 }
                 &:last-child {
-                    grid-row: 3 / 4;
+                    grid-row: 3 / span 1;
                 }
                 @extend %placeholder;
             }
@@ -359,17 +269,12 @@ header {
 footer {
     padding: 15px 0;
     .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        @include grid($column: '1fr 1fr 1fr');
         max-width: $maxWidth;
-        margin: 0 auto;
+        @include margin-auto;
         p {
-            display: flex;
-            align-items: center;
+            margin: auto 0;
             font-family: Montserrat;
-            font-size: 14px;
-            line-height: 22px;
-            letter-spacing: -0.025em;
             color: #555;
         }
         .social-media {

@@ -2,6 +2,17 @@
     text-stroke: $width $color;
     -webkit-text-stroke: $width $color;
 }
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin grid($row: none, $column: none, $rowGap: 0, $columnGap: 0) {
+    display: grid;
+    grid: unquote(#{$row}) / unquote(#{$column});
+    grid-gap: $rowGap $columnGap;
+}
 @mixin margin-auto {
     margin-right: auto;
     margin-left: auto;
