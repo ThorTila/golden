@@ -96,6 +96,7 @@ h4, #contact form .fieldset input {
   font: bold 1.125em Montserrat, sans-serif;
   letter-spacing: -0.025em;
   color: #222;
+  text-transform: capitalize;
 }
 
 p {
