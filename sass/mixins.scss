@@ -27,6 +27,12 @@
     margin-right: auto;
     margin-left: auto;
 }
+@mixin padding($top: '', $right: '', $bottom: '', $left: '') {
+    @if $top != '' { padding-top: $top; }
+    @if $right != '' { padding-right: $right; }
+    @if $bottom != '' { padding-bottom: $bottom; }
+    @if $left != '' { padding-left: $left; }
+}
 %placeholder::placeholder {
     font-family: Montserrat;
     font-weight: bold;

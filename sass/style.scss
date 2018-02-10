@@ -7,7 +7,6 @@ header {
     height: 100vh;
     max-height: 700px;
     @include flex($direction: column, $justify: space-between);
-    line-height: 2.5625rem;
     background: linear-gradient(
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)),
@@ -22,6 +21,7 @@ header {
             color: $yellow;
             font-weight: 100;
             font-size: 1.625em;
+            line-height: 1.577; // z psa
             letter-spacing: 0.05em;
             display: inline-block;
         }
@@ -39,6 +39,7 @@ header {
                     color: $white;
                     font-family: Montserrat;
                     font-size: 0.875em;
+                    line-height: 2.929; // z psa
                     text-transform: uppercase;
                     vertical-align: text-bottom;
                 }
@@ -52,14 +53,16 @@ header {
         text-align: center;
         h2 {
             font-size: 4.6875em;
-            padding-bottom: 50px;
+            line-height: 1.2; // zpsa
+            padding-bottom: 40px;
             color: $white;
         }
         h3 {
             text-transform: capitalize;
             font-size: 2.5em;
+            line-height: 1.2;     // z psa
             letter-spacing: -0.025em;
-            padding-bottom: 60px;
+            @include padding($top: 30px, $bottom: 30px);
             color: $white;
         }
     }
@@ -69,6 +72,8 @@ header {
         @include flex;
         .header {
             padding-bottom: 60px;
+            h3 {
+            }
         }
         .box {
             i {
@@ -79,6 +84,8 @@ header {
             }
             h4 {
                 line-height: 2.815rem;
+            }
+            p {
             }
         }
     }
@@ -101,6 +108,7 @@ header {
                     letter-spacing: normal;
                     font-style: italic;
                     color: #737373;
+                    text-transform: capitalize;
                 }
             }
         }
