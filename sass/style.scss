@@ -7,7 +7,7 @@ header {
     height: 100vh;
     max-height: 700px;
     @include flex($direction: column, $justify: space-between);
-    line-height: 41px;
+    line-height: 2.5625rem;
     background: linear-gradient(
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)),
@@ -16,12 +16,12 @@ header {
         width: 100%;
         max-width: $maxWidth;
         @include margin-auto;
-        padding: 48px 10px 0 10px;
+        padding: 40px 10px 0 10px;
         h1 {
             font-family: Wisdom;
             color: $yellow;
             font-weight: 100;
-            font-size: 26px;
+            font-size: 1.625em;
             letter-spacing: 0.05em;
             display: inline-block;
         }
@@ -38,7 +38,7 @@ header {
                     text-decoration: none;
                     color: $white;
                     font-family: Montserrat;
-                    font-size: 14px;
+                    font-size: 0.875em;
                     text-transform: uppercase;
                     vertical-align: text-bottom;
                 }
@@ -51,23 +51,22 @@ header {
         @include margin-auto;
         text-align: center;
         h2 {
-            font-size: 75px;
+            font-size: 4.6875em;
             padding-bottom: 50px;
             color: $white;
         }
         h3 {
             text-transform: capitalize;
-            font-size: 40px;
+            font-size: 2.5em;
             letter-spacing: -0.025em;
             padding-bottom: 60px;
             color: $white;
         }
     }
 }
-.services {
+#services {
     .flex-row {
-        max-width: $maxWidth;
-        display: flex;
+        @include flex;
         .header {
             padding-bottom: 60px;
         }
@@ -79,19 +78,17 @@ header {
                 }
             }
             h4 {
-                line-height: 45px;
+                line-height: 2.815rem;
             }
         }
     }
 }
-.portfolio {
+#portfolio {
     background-color: #f7f7f7;
     .header {
-        max-width: $maxWidth;
         padding-bottom: 77px;
     }
     .gallery {
-        max-width: $maxWidth;
         @include grid($column: '1fr 1fr 1fr', $rowGap: 60px, $columnGap: 35px);
         .gallery-item {
             background-color: $white;
@@ -109,14 +106,12 @@ header {
         }
     }
 }
-.about {
+#about {
     .header {
-        max-width: $maxWidth;
         padding-bottom: 75px;
     }
     .timeline {
         width: 100%;
-        max-width: $maxWidth;
         @include grid($column: '[left] 3fr [middle] 2fr [right] 3fr', $rowGap: 90px, $columnGap: 20px);
         position: relative;
         .caption {
@@ -154,10 +149,9 @@ header {
         }
     }
 }
-.team {
+#team {
     background-color: #f9f9f9;
     .header {
-        max-width: $maxWidth;
         h2 {
             line-height: normal;
         }
@@ -168,7 +162,6 @@ header {
     .people {
         display: flex;
         width: 100%;
-        max-width: $maxWidth;
         padding: 0 80px;
         .employee {
             @include flex($direction: column);
@@ -186,14 +179,14 @@ header {
                 border-radius: 50%;
                 &:before {
                     content: "";
-                padding-top: 100%;
+                    padding-top: 100%;
                     display: inline-block;
                 }
             }
             .caption {
                 h4 {
-                    font-size: 16px;
-                    line-height: 50px;
+                    font-size: 1em;
+                    line-height: 3.125rem;
                 }
             }
             .social-media {
@@ -202,22 +195,20 @@ header {
         }
     }
     .bottom-text {
-        max-width: $maxWidth;
         padding: 40px 160px 0 160px;
         p {
-            font-size: 16px;
+            font-size: 1em;
         }
     }
 }
-.logos {
-    @include flex($justify: center);
+#logos {
+    @include flex($direction: row, $justify: center);
     padding: 50px 0 65px 0;
 }
-.contact {
+#contact {
     @include flex($justify: center);
     background: url(../images/mapImage.png) right no-repeat $blackText;
     form {
-        max-width: $maxWidth;
         width: 100%;
         @include flex($direction: column, $align: center);
         .header {
@@ -240,8 +231,8 @@ header {
                 height: 50px;
                 padding-left: 20px;
                 @extend h4;
-                font-size: 14px;
-                line-height: 44px;
+                font-size: 0.875em;
+                line-height: 2.75rem;
                 &:first-child {
                     grid-row: 1 / span 1;
                 }
@@ -256,9 +247,9 @@ header {
             textarea {
                 grid-area: 1 / 2 / 4 / 2;
                 padding: 20px;
-                font-family: Montserrat;
+                font-family: Montserrat, sans-serif;
                 font-weight: regular;
-                font-size: 14px;
+                font-size: 0.875;
                 letter-spacing: -0.025em;
                 color: $blackText;
                 @extend %placeholder;
@@ -274,7 +265,7 @@ footer {
         @include margin-auto;
         p {
             margin: auto 0;
-            font-family: Montserrat;
+            font-family: Montserrat, sans-serif;
             color: #555;
         }
         .social-media {

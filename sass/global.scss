@@ -12,28 +12,32 @@ section {
     @include flex($direction: column, $align: center);
     padding: 100px 0 120px 0;
     text-align: center;
+    & > div, & > form {
+        max-width: $maxWidth;
+        font-size: 1rem;
+    }
 }
 p, h1, h2, h3, h4, h5, h6, ul, li, a {
     margin: 0;
     padding: 0;
 }
 h2 {
-    font: bold 40px/75px Montserrat, sans-serif;
+    font: bold 2.5em/4.6875rem Montserrat, sans-serif;
     letter-spacing: -0.025em;
     color: $blackText;
     text-transform: uppercase;
 }
 h3 {
-    font: italic 16px 'Droid Serif', serif;
+    font: italic 1em 'Droid Serif', serif;
     color: $lightText; 
 }
 h4 {
-    font: bold 18px Montserrat, sans-serif;
+    font: bold 1.125em Montserrat, sans-serif;
     letter-spacing: -0.025em;
     color: $blackText;
 }
 p {
-    font: 14px 'Roboto Slab', serif;
+    font: 0.875em 'Roboto Slab', serif;
     letter-spacing: -0.025em;
     color: $lightText;
 }
@@ -44,6 +48,6 @@ button {
     background-color: $yellow;
     border: none;
     border-radius: 5px;
-    font: bold 18px Montserrat, sans-serif;
+    font: bold 1.125em Montserrat, sans-serif;
     text-transform: uppercase;
 }
