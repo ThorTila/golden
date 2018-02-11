@@ -22,6 +22,8 @@ section { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-
 
 section > div, section > form { max-width: 960px; font-size: 1rem; width: 100%; }
 
+section > .header { padding-bottom: 75px; }
+
 p, h1, h2, h3, h4, #contact form .fieldset input, h5, h6, ul, li, a { margin: 0; padding: 0; }
 
 h2 { font: bold 2.5em/4.6875rem Montserrat, sans-serif; letter-spacing: -0.025em; color: #222; text-transform: uppercase; }
@@ -32,7 +34,21 @@ h4, #contact form .fieldset input { font: bold 1.125em Montserrat, sans-serif; l
 
 p { font: 0.875em 'Roboto Slab', serif; letter-spacing: -0.025em; color: #777; }
 
-button { width: 25%; height: 65px; color: #fff; background-color: #fed136; border: none; border-radius: 3px; font: bold 1.125em Montserrat, sans-serif; line-height: 1.2; text-transform: uppercase; }
+button { width: 25%; height: 65px; color: #fff; background-color: #fed136; border: none; border-radius: 3px; font: bold 1.125em Montserrat, sans-serif; line-height: 1.2; text-transform: uppercase; cursor: pointer; transition: transform 1s, box-shadow 1s; }
+
+button:hover { transform: scale(1.2); -webkit-filter: brightness(1.1); filter: brightness(1.1); color: #9a7801; box-shadow: 0 0 20px 10px black; }
+
+.social-media .fa { border-radius: 50%; }
+
+.social-media > span:hover .fa-stack-1x { color: white; }
+
+.social-media > span:hover .fa-twitter { background: #00aced; }
+
+.social-media > span:hover .fa-facebook { background: #3b5998; }
+
+.social-media > span:hover .fa-google-plus { background: #d95232; }
+
+.social-media > span:hover .fa-pinterest-p { background: #cb2028; }
 
 header { width: 100%; height: 100vh; max-height: 700px; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-pack: justify; justify-content: space-between; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/header@1x.png) center/cover no-repeat; }
 
@@ -48,6 +64,8 @@ header nav ul li:last-child { padding-right: 0; }
 
 header nav ul li a { text-decoration: none; color: #fff; font-family: Montserrat; font-size: 0.875em; line-height: 2.929; text-transform: uppercase; vertical-align: text-bottom; }
 
+header nav ul li a:hover { font-weight: bold; }
+
 header .slogan { width: 100%; max-width: 960px; margin-right: auto; margin-left: auto; text-align: center; }
 
 header .slogan h2 { font-size: 4.6875em; line-height: 1.2; padding-bottom: 40px; color: #fff; }
@@ -55,8 +73,6 @@ header .slogan h2 { font-size: 4.6875em; line-height: 1.2; padding-bottom: 40px;
 header .slogan h3 { text-transform: capitalize; font-size: 2.5em; line-height: 1.2; letter-spacing: -0.025em; padding-top: 30px; padding-bottom: 30px; color: #fff; }
 
 #services .flex-row { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; }
-
-#services .flex-row .header { padding-bottom: 60px; }
 
 #services .flex-row .box i { color: #fed136; }
 
@@ -66,19 +82,21 @@ header .slogan h3 { text-transform: capitalize; font-size: 2.5em; line-height: 1
 
 #portfolio { background-color: #f7f7f7; }
 
-#portfolio .header { padding-bottom: 77px; }
+#portfolio .gallery { display: -ms-grid; display: grid; grid: none/1fr 1fr 1fr; grid-gap: 60px 20px; }
 
-#portfolio .gallery { display: -ms-grid; display: grid; grid: none/1fr 1fr 1fr; grid-gap: 60px 35px; }
+#portfolio .gallery .gallery-item { background-color: #fff; cursor: pointer; transition: transform 1s; }
 
-#portfolio .gallery .gallery-item { background-color: #fff; }
+#portfolio .gallery .gallery-item:hover { transform: scale(1.2); }
+
+#portfolio .gallery .gallery-item:hover img { box-shadow: 0 0 25px 10px black; }
+
+#portfolio .gallery .gallery-item img { box-shadow: 0 0 0 0 white; transition: box-shadow 1s; }
 
 #portfolio .gallery .gallery-item .caption { padding: 20px 0; }
 
 #portfolio .gallery .gallery-item .caption h4, #portfolio .gallery .gallery-item .caption #contact form .fieldset input, #contact form .fieldset #portfolio .gallery .gallery-item .caption input { color: #333; }
 
 #portfolio .gallery .gallery-item .caption p { letter-spacing: normal; font-style: italic; color: #737373; text-transform: capitalize; }
-
-#about .header { padding-bottom: 75px; }
 
 #about .timeline { display: -ms-grid; display: grid; grid: none/[left] 3fr [middle] 2fr [right] 3fr; grid-gap: 90px 20px; position: relative; }
 
@@ -102,7 +120,7 @@ header .slogan h3 { text-transform: capitalize; font-size: 2.5em; line-height: 1
 
 #team .people { display: -ms-flexbox; display: flex; padding: 0 80px; }
 
-#team .people .employee { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; width: 33%; margin: 75px 30px 0 20px; }
+#team .people .employee { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; width: 33%; margin-right: 30px; margin-left: 20px; }
 
 #team .people .employee:first-child { margin-left: 0; }
 

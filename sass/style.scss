@@ -42,6 +42,9 @@ header {
                     line-height: 2.929; // z psa
                     text-transform: uppercase;
                     vertical-align: text-bottom;
+                    &:hover {
+                        font-weight: bold;
+                    }
                 }
             }
         }
@@ -70,9 +73,6 @@ header {
 #services {
     .flex-row {
         @include flex($justify: center);
-        .header {
-            padding-bottom: 60px;
-        }
         .box {
             i {
                 color: $yellow;
@@ -88,13 +88,22 @@ header {
 }
 #portfolio {
     background-color: #f7f7f7;
-    .header {
-        padding-bottom: 77px;
-    }
     .gallery {
-        @include grid($column: '1fr 1fr 1fr', $rowGap: 60px, $columnGap: 35px);
+        @include grid($column: '1fr 1fr 1fr', $rowGap: 60px, $columnGap: 20px);
         .gallery-item {
             background-color: $white;
+            cursor: pointer;
+            transition: transform 1s;
+            &:hover {
+                transform: scale(1.2);
+                img {
+                    box-shadow: 0 0 25px 10px black;
+                }
+            }
+            img {
+                box-shadow: 0 0 0 0 white;
+                transition: box-shadow 1s;
+            }
             .caption {
                 padding: 20px 0;
                 h4 {
@@ -111,9 +120,6 @@ header {
     }
 }
 #about {
-    .header {
-        padding-bottom: 75px;
-    }
     .timeline {
         @include grid($column: '[left] 3fr [middle] 2fr [right] 3fr', $rowGap: 90px, $columnGap: 20px);
         position: relative;
@@ -168,7 +174,7 @@ header {
         .employee {
             @include flex($direction: column);
             width: 33%;
-            margin: 75px 30px 0 20px;
+            @include margin($right: 30px, $left: 20px);
             &:first-child {
                 margin-left: 0;
             }
@@ -192,7 +198,7 @@ header {
                 }
             }
             .social-media {
-                padding: 10px 0; //dodać hover
+                padding: 10px 0;
             }
         }
     }
