@@ -15,7 +15,7 @@ header {
         width: 100%;
         max-width: $maxWidth;
         @include margin-auto;
-        padding: 40px 10px 0 10px;
+        padding: 2.5em 0.625em 0 0.625em;
         h1 {
             font-family: Wisdom;
             color: $yellow;
@@ -30,7 +30,7 @@ header {
             list-style-type: none;
             li {
                 display: inline-block;
-                padding: 0 17px;
+                padding: 0 1.0625em;
                 &:last-child {
                     padding-right: 0;
                 }
@@ -55,9 +55,9 @@ header {
         @include margin-auto;
         text-align: center;
         h2 {
-            font-size: 4.6875em;
+            font-size: 4.6875em;  //75px
             line-height: 1.2; // zpsa
-            padding-bottom: 40px;
+            padding-bottom: .53em; //40px
             color: $white;
         }
         h3 {
@@ -73,6 +73,9 @@ header {
 #services {
     .flex-row {
         @include flex($justify: center);
+        @include phone {
+            flex-wrap: wrap;
+        }
         .box {
             i {
                 color: $yellow;
@@ -90,12 +93,26 @@ header {
     background-color: #f7f7f7;
     .gallery {
         @include grid($column: '1fr 1fr 1fr', $rowGap: 60px, $columnGap: 20px);
+        @include desktop {
+            @include grid($column: '1fr 1fr');
+        }
+        @include tablet {
+            @include grid($column: '1fr');
+            max-width: 320px;
+        }
+        @include phone {
+            @include grid($rowGap: 0, $columnGap: 0);
+        }
         .gallery-item {
             background-color: $white;
+            max-width: inherit;
             cursor: pointer;
             transition: transform 1s;
             &:hover {
                 transform: scale(1.2);
+                @include phone {
+                    transform: none;
+                }
                 img {
                     box-shadow: 0 0 25px 10px black;
                 }
@@ -103,6 +120,7 @@ header {
             img {
                 box-shadow: 0 0 0 0 white;
                 transition: box-shadow 1s;
+                max-width: inherit;
             }
             .caption {
                 padding: 20px 0;
@@ -121,16 +139,39 @@ header {
 }
 #about {
     .timeline {
-        @include grid($column: '[left] 3fr [middle] 2fr [right] 3fr', $rowGap: 90px, $columnGap: 20px);
+        @include grid($column: '[left] 3fr [middle] 2fr [right] 3fr', $rowGap: 5.625em, $columnGap: 1.25em);
         position: relative;
+        @include tablet {
+            @include grid($column: '[left] 3fr [right] 2fr');
+            grid-auto-flow: column;
+        }
+        @include phone {
+            @include grid($column: '1fr', $columnGap: 0);
+            grid-auto-rows: 1fr;
+        }
         .caption {
-            &:nth-child(even) {
+            &:nth-of-type(odd) {
                 grid-column: left;
                 text-align: right;
             }
-            &:nth-child(odd) {
+            &:nth-of-type(even) {
                 grid-column: right;
                 text-align: left;
+                @include tablet {
+                    grid-column: left;
+                    text-align: right;
+                }
+            }
+            @include tablet {
+                @include margin($top: auto, $bottom: auto);
+            }
+            @include phone {
+                @for $i from 1 through $timelineRows {
+                    &:nth-of-type(#{$i}) {
+                        grid-row: #{2 * $i};
+                        text-align: center;
+                    }
+                }
             }
             h4 {
                 &:first-child {
@@ -145,6 +186,16 @@ header {
         img {
             grid-column: middle;
             justify-self: center;
+            @include tablet {
+                grid-column: right;
+            }
+            @include phone {
+                @for $i from 1 through $timelineRows {
+                    &:nth-of-type(#{$i}) {
+                        grid-row: #{2 * $i - 1};
+                    }
+                }
+            }
         }
         span {
             width: 0;
@@ -155,6 +206,9 @@ header {
             grid-column: 2 / span 1;
             grid-row: 1 / span 6;
             z-index: -1;
+            @include phone {
+                display: none;
+            }
         }
     }
 }
@@ -170,11 +224,22 @@ header {
     }
     .people {
         display: flex;
-        padding: 0 80px;
+        padding: 0 5em;
+        @include desktop {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         .employee {
             @include flex($direction: column);
             width: 33%;
             @include margin($right: 30px, $left: 20px);
+            @include desktop {
+                width: 50%;
+                margin: 0;
+            }
+            @include phone {
+                width: 100%;
+            }
             &:first-child {
                 margin-left: 0;
             }
@@ -203,7 +268,10 @@ header {
         }
     }
     .bottom-text {
-        padding: 40px 160px 0 160px;
+        padding: 2.5em 10em 0 10em; //40px 160px
+        @include desktop {
+            padding: 0;
+        }
         p {
             font-size: 1em;
         }
@@ -213,6 +281,16 @@ header {
     @include padding($top: 50px, $bottom: 65px);
     .container {
         @include flex($direction: row, $justify: space-evenly);
+        @include desktop {
+            flex-wrap: wrap;
+            align-content: space-between;
+            @include margin($top: -1em, $bottom: -1em);
+        }
+        img {
+            @include desktop {
+                @include margin($top: 1em, $bottom: 1em);
+            }
+        }
     }
 }
 #contact {

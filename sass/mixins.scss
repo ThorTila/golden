@@ -15,10 +15,10 @@
         grid-gap: $rowGap $columnGap;
     } @else {
         @if $rowGap != '' {
-            grid-gap: $rowGap 0;
+            grid-row-gap: $rowGap;
         } @else {
             @if $columnGap != '' {
-                grid-gap: 0 $columnGap;
+                grid-column-gap: $columnGap;
             }
         }
     }
@@ -46,4 +46,19 @@
     letter-spacing: -0.025em;
     color: #bbb;
     text-transform: uppercase;
+}
+@mixin phone {
+    @media (max-width: $phoneWidth) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: $tabletWidth) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (max-width: $desktopWidth) {
+        @content;
+    }
 }
