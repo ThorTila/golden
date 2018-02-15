@@ -74,3 +74,32 @@ function smoothScroll(offset, duration) {
     window.scrollBy(0,offset);
   } 
 }
+
+
+//hamburger
+var hamburger = document.querySelectorAll('.hamburger')[0];
+var body = document.getElementsByTagName('body')[0];
+hamburger.addEventListener('click', toggleMenu, false);
+    var menu = document.querySelectorAll('.js-nav')[0];
+    var isMenuShown;
+    function showMenu () {
+        menu.className += ' hamburger-element';
+        menu.classList.remove('hamburger-out');
+        hamburger.className += ' hamburger-close';
+        body.style.overflow = 'hidden';
+        isMenuShown = true;
+    }
+    function hideMenu () {
+        menu.className += ' hamburger-out';
+        menu.classList.remove('hamburger-element');
+        hamburger.classList.remove('hamburger-close');
+        body.style.removeProperty('overflow');
+        isMenuShown = false;
+    }
+    function toggleMenu () {
+        if (isMenuShown) {
+            hideMenu();
+        } else {
+            showMenu();
+            }
+    }

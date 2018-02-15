@@ -2,6 +2,7 @@
 @import 'fonts';
 @import 'mixins';
 @import 'global';
+@import 'animations';
 header {
     width: 100%;
     height: 100vh;
@@ -24,13 +25,88 @@ header {
             line-height: 1.577; // z psa
             letter-spacing: 0.05em;
             display: inline-block;
+            position: relative;
+            z-index: 100;
+            @include desktop {
+                margin-left: 1em;
+            }
+        }
+        .hamburger {
+            display: none;
+            @include tablet {
+                display: block;
+                float: right;
+                margin-right: 1em;
+                padding: 1em;
+                background-color: rgba(0, 0, 0, 0.3);
+                cursor: pointer;
+                position: relative;
+                z-index: 100;
+            }
+            .line {
+                width: 50px;
+                height: 6px;
+                margin-top: 5px;
+                background-color: $yellow;
+                transition: transform 2s;
+                &:first-of-type {
+                    margin: 0;
+                }
+            }
+        }
+        .hamburger-close {
+            .line {
+                transition: transform 2s;
+                &:first-of-type {
+                    transform: rotateZ(405deg);
+                }
+                &:nth-of-type(2) {
+                    transform: rotateZ(-405deg);
+                }
+                &:last-of-type {
+                    transform: scaleX(4) translateY(1.5em);
+                    transform-origin: 100% 50%;
+                }
+            }
+        }
+        .hamburger-element {  
+            display: block;
+                @include flex($direction: column, $justify: center);
+            animation: slideInMenu;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+        .hamburger-out {
+            display: block;
+                @include flex($direction: column, $justify: center);
+            animation: slideOutMenu;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
         }
         ul {
             float: right;
             list-style-type: none;
+            background-color: transparent;
+            @include tablet {
+                display: none;
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                right: 0;
+                z-index: 1;
+                padding-top: 90px;
+                background-color: rgba(0, 0, 0, 0.8);
+                font-size: 4em;
+            }
             li {
                 display: inline-block;
                 padding: 0 1.0625em;
+                @include tablet {
+                    display: block;
+                    text-align: center;
+                    padding: 0;
+                }
                 &:last-child {
                     padding-right: 0;
                 }
@@ -73,10 +149,16 @@ header {
 #services {
     .flex-row {
         @include flex($justify: center);
-        @include phone {
+        @include tablet {
             flex-wrap: wrap;
         }
         .box {
+            @include tablet {
+                width: 50%;
+            }
+            @include phone {
+                width: 100%;
+            }
             i {
                 color: $yellow;
                 &:last-child {
@@ -287,6 +369,7 @@ header {
             @include margin($top: -1em, $bottom: -1em);
         }
         img {
+            object-fit: contain;
             @include desktop {
                 @include margin($top: 1em, $bottom: 1em);
             }
@@ -294,7 +377,6 @@ header {
     }
 }
 #contact {
-    @include flex($justify: center);
     background: url(../images/mapImage.png) right no-repeat $blackText;
     form {
         @include flex($direction: column, $align: center);
@@ -311,35 +393,49 @@ header {
             border: none;
             margin: 80px 0 30px 0;
             padding: 0 10px;
+            @include tablet {
+                @include grid($row: 'repeat(3, 1fr) 3fr', $column: '1fr');
+            }
             label {
                 display: none; //fallback for browsers without css support
             }
             input {
                 height: 50px;
+                width: 100%;
                 padding-left: 20px;
                 @extend h4;
                 font-size: 0.875em;
                 line-height: 2.75rem;
-                &:first-child {
+                resize: vertical;
+                &:first-of-type {
                     grid-row: 1 / span 1;
                 }
-                &:nth-child(2) {
+                &:nth-of-type(2) {
                     grid-row: 2 / span 1;
                 }
-                &:last-child {
+                &:last-of-type {
                     grid-row: 3 / span 1;
                 }
                 @extend %placeholder;
             }
             textarea {
                 grid-area: 1 / 2 / 4 / 2;
+                @include gridElement(1, span 3, 2, span 1);
+                height: 100%;
+                width: 100%;
                 padding: 20px;
                 font-family: Montserrat, sans-serif;
                 font-weight: regular;
                 font-size: 0.875;
                 letter-spacing: -0.025em;
                 color: $blackText;
+                resize: vertical;
+                overflow: auto;
                 @extend %placeholder;
+                @include tablet {
+                    grid-row: span 1;
+                    grid-column: 1 / 1
+                }
             }
         }
     }

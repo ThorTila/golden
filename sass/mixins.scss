@@ -11,6 +11,8 @@
 @mixin grid($row: none, $column: none, $rowGap: '', $columnGap: '') {
     display: grid;
     grid: unquote(#{$row}) / unquote(#{$column});
+    -ms-grid-columns: unquote(#{$column});
+    -ms-grid-rows: unquote(#{$row});
     @if $rowGap != '' and $columnGap != '' {
         grid-gap: $rowGap $columnGap;
     } @else {
@@ -22,6 +24,12 @@
             }
         }
     }
+}
+@mixin gridElement($rowStart, $rowWidth, $columnStart, $columnWidth) { //for ie
+    -ms-grid-row: $rowStart;
+    -ms-grid-row-span: str-replace(#{$rowWidth}, 'span ');
+    -ms-grid-column: str-replace(#{$columnStart}, 'span ');
+    -ms-grid-column-span: $columnWidth
 }
 @mixin margin-auto {
     margin-right: auto;
@@ -47,6 +55,7 @@
     color: #bbb;
     text-transform: uppercase;
 }
+//Media queries
 @mixin phone {
     @media (max-width: $phoneWidth) {
         @content;
@@ -61,4 +70,13 @@
     @media (max-width: $desktopWidth) {
         @content;
     }
+}
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
 }
