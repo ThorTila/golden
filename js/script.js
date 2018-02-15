@@ -79,6 +79,12 @@ function smoothScroll(offset, duration) {
 //hamburger
 var hamburger = document.querySelectorAll('.hamburger')[0];
 var body = document.getElementsByTagName('body')[0];
+console.log(window.innerWidth);
+if (window.innerWidth <= 768) {
+var nav = document.querySelectorAll('.js-nav');
+for (var i = 0; i < nav.length; i++) {
+  nav[i].addEventListener("click", toggleMenu, false);
+}}
 hamburger.addEventListener('click', toggleMenu, false);
     var menu = document.querySelectorAll('.js-nav')[0];
     var isMenuShown;
