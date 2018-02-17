@@ -80,33 +80,38 @@ function smoothScroll(offset, duration) {
 //hamburger
 var hamburger = document.querySelectorAll('.hamburger')[0];
 var body = document.getElementsByTagName('body')[0];
-console.log(window.innerWidth);
+var menu = document.querySelectorAll('.js-nav')[0];
+var isMenuShown;
+function showMenu () {
+    menu.className += ' hamburger-element';
+    menu.classList.remove('hamburger-out');
+    hamburger.className += ' hamburger-close';
+    body.style.overflowY = 'hidden';
+    isMenuShown = true;
+}
+function hideMenu () {
+    menu.className += ' hamburger-out';
+    menu.classList.remove('hamburger-element');
+    hamburger.classList.remove('hamburger-close');
+    body.style.removeProperty('overflow');
+    isMenuShown = false;
+}
+function toggleMenu () {
+    if (isMenuShown) {
+        hideMenu();
+    } else {
+        showMenu();
+        }
+}
+function cleanClasses () {
+    menu.classList.remove('hamburger-element', 'hamburger-out');
+    hamburger.classList.remove('hamburger-close');
+    isMenuShown = false;
+}
 if (window.innerWidth <= 768) {
-var nav = document.querySelectorAll('.js-nav');
-for (let i = 0; i < nav.length; i++) {
-  nav[i].addEventListener("click", toggleMenu, false);
-}}
+    for (let i = 0; i < nav.length; i++) {
+        nav[i].addEventListener("click", toggleMenu, false);
+    }
+}
 hamburger.addEventListener('click', toggleMenu, false);
-    var menu = document.querySelectorAll('.js-nav')[0];
-    var isMenuShown;
-    function showMenu () {
-        menu.className += ' hamburger-element';
-        menu.classList.remove('hamburger-out');
-        hamburger.className += ' hamburger-close';
-        body.style.overflowY = 'hidden';
-        isMenuShown = true;
-    }
-    function hideMenu () {
-        menu.className += ' hamburger-out';
-        menu.classList.remove('hamburger-element');
-        hamburger.classList.remove('hamburger-close');
-        body.style.removeProperty('overflow');
-        isMenuShown = false;
-    }
-    function toggleMenu () {
-        if (isMenuShown) {
-            hideMenu();
-        } else {
-            showMenu();
-            }
-    }
+window.addEventListener('resize', cleanClasses, false);
