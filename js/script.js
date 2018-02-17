@@ -1,5 +1,6 @@
+/*global document, window, self, console, CSS*/
 var nav = document.querySelectorAll('.js-nav');
-for (var i = 0; i < nav.length; i++) {
+for (let i = 0; i < nav.length; i++) {
   nav[i].addEventListener("click", scrollToID, false);
 }
 function scrollToID(event) {
@@ -15,7 +16,7 @@ function targetAddr(element) {
   if (element.hasAttribute('href')) {
     return element.getAttribute('href').replace('#', '');
   } else {
-      link = element.getElementsByTagName('a');
+      var link = element.getElementsByTagName('a');
       for (var i = 0; i < link.length; i++) {
         if (link[i].hasAttribute('href') === true) {
         return link[i].getAttribute('href').replace('#', '');
@@ -53,7 +54,7 @@ function roundDown(number) {
 function smoothScroll(offset, duration) {
     //For older browsers and IE
   if (('scroll-behavior' in document.body.style) === false || (CSS.supports('scroll-behavior', 'smooth')) === false) {
-	 var i = 0;
+      var i = 0;
     var increments = roundDown(offset / (duration / 10));
     var incrementsRemainder = (offset % (duration / 10));
     animate();
@@ -82,7 +83,7 @@ var body = document.getElementsByTagName('body')[0];
 console.log(window.innerWidth);
 if (window.innerWidth <= 768) {
 var nav = document.querySelectorAll('.js-nav');
-for (var i = 0; i < nav.length; i++) {
+for (let i = 0; i < nav.length; i++) {
   nav[i].addEventListener("click", toggleMenu, false);
 }}
 hamburger.addEventListener('click', toggleMenu, false);
@@ -92,7 +93,7 @@ hamburger.addEventListener('click', toggleMenu, false);
         menu.className += ' hamburger-element';
         menu.classList.remove('hamburger-out');
         hamburger.className += ' hamburger-close';
-        body.style.overflow = 'hidden';
+        body.style.overflowY = 'hidden';
         isMenuShown = true;
     }
     function hideMenu () {

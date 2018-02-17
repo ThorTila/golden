@@ -16,15 +16,6 @@ html {
 body {
     background-color: $white;
     margin: 0;
-    @include desktop {
-        border: 2px solid blue;
-    }
-    @include tablet {
-        border: 2px solid green;        //temporary
-    }
-    @include phone {
-        border: 2px solid red;
-    }
 }
 section {
     @include flex($direction: column, $align: center);
