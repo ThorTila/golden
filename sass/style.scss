@@ -5,7 +5,7 @@
 @import 'animations';
 header {
     width: 100%;
-    min-height: 700px;
+    min-height: 43.75em;
     @include flex($direction: column, $justify: space-between);
     background: linear-gradient(
         rgba(0, 0, 0, 0.5),
@@ -68,18 +68,16 @@ header {
                 }
             }
         }
-        .hamburger-element {
-            @include flex($direction: column, $justify: center);
-            flex-wrap: wrap;
+        .menu-in {
+            @extend %menu-hamburger;
             animation: slideInMenu;
-            animation-duration: 2s;
+            animation-duration: 1s;
             animation-fill-mode: forwards;
         }
-        .hamburger-out {
-            @include flex($direction: column, $justify: center);
-            flex-wrap: wrap;
+        .menu-out {
+            @extend %menu-hamburger;
             animation: slideOutMenu;
-            animation-duration: 2s;
+            animation-duration: 1s;
             animation-fill-mode: forwards;
         }
         ul {
@@ -94,9 +92,9 @@ header {
                 top: 0;
                 right: 0;
                 z-index: 1;
-                padding-top: 90px;
+                padding-top: 6rem;
                 background-color: rgba(0, 0, 0, 0.8);
-                font-size: 3em;
+                font-size: 6vh;
             }
             li {
                 display: inline-block;

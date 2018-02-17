@@ -1,8 +1,5 @@
 /*global document, window, self, console, CSS*/
 var nav = document.querySelectorAll('.js-nav');
-for (let i = 0; i < nav.length; i++) {
-  nav[i].addEventListener("click", scrollToID, false);
-}
 function scrollToID(event) {
   var element = event.target;
   event.preventDefault();
@@ -57,7 +54,6 @@ function smoothScroll(offset, duration) {
       var i = 0;
     var increments = roundDown(offset / (duration / 10));
     var incrementsRemainder = (offset % (duration / 10));
-    animate();
     function animate() {
       window.scrollBy(0, increments);
       i++;
@@ -68,6 +64,7 @@ function smoothScroll(offset, duration) {
         return;
       }
     }
+    animate();
   }
     //For normal browsers
   else {
@@ -83,15 +80,15 @@ var body = document.getElementsByTagName('body')[0];
 var menu = document.querySelectorAll('.js-nav')[0];
 var isMenuShown;
 function showMenu () {
-    menu.className += ' hamburger-element';
-    menu.classList.remove('hamburger-out');
+    menu.className += ' menu-in';
+    menu.classList.remove('menu-out');
     hamburger.className += ' hamburger-close';
-    body.style.overflowY = 'hidden';
+    body.style.overflow = 'hidden';
     isMenuShown = true;
 }
 function hideMenu () {
-    menu.className += ' hamburger-out';
-    menu.classList.remove('hamburger-element');
+    menu.className += ' menu-out';
+    menu.classList.remove('menu-in');
     hamburger.classList.remove('hamburger-close');
     body.style.removeProperty('overflow');
     isMenuShown = false;
@@ -104,10 +101,15 @@ function toggleMenu () {
         }
 }
 function cleanClasses () {
-    menu.classList.remove('hamburger-element', 'hamburger-out');
+    menu.classList.remove('menu-in', 'menu-out');
     hamburger.classList.remove('hamburger-close');
     isMenuShown = false;
 }
+//listener for smoothScroll
+for (let i = 0 ; i < nav.length; i++) {
+  nav[i].addEventListener("click", scrollToID, false);
+}
+//listeners for hamburger menu
 if (window.innerWidth <= 768) {
     for (let i = 0; i < nav.length; i++) {
         nav[i].addEventListener("click", toggleMenu, false);

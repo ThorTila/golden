@@ -3,12 +3,6 @@ html {
     @include desktop {
         font-size: .9em;
     }
-    @include tablet {
-        font-size: .8em;
-    }
-    @include phone {
-        font-size: .7em;
-    }
 }
 *, *:before, *:after {
     box-sizing: inherit;
